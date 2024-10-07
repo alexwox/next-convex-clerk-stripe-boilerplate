@@ -11,6 +11,10 @@ export default function Home() {
         <UserButton />
         <h1>Boilerplate, Signed in</h1>
         <SignOutButton />
+
+        <form>
+          <input type="text" name="randString" />
+        </form>
       </SignedIn>
     </main>
   );
