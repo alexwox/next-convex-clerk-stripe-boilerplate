@@ -1,16 +1,17 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main>
-        <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-        </main>
-    </div>
+    <main className="flex flex-col items-center justify-center ">
+      <SignedOut>
+        <SignInButton />
+        <h1>Boilerplate, Signed out</h1>
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+        <h1>Boilerplate, Signed in</h1>
+        <SignOutButton />
+      </SignedIn>
+    </main>
   );
 }

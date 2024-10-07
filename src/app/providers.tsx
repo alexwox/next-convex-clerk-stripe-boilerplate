@@ -15,7 +15,7 @@ export function Providers({
 ) {
     return (
       <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY as string}>
-        <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+        <ConvexProviderWithClerk useAuth={useAuth} client={convex} >
           {children}
         </ConvexProviderWithClerk>
       </ClerkProvider>
