@@ -6,4 +6,9 @@ export default defineSchema({
     title: v.string(),
     userId: v.string(),
   }),
+  users: defineTable({
+    id: v.string(),
+    email: v.string(),
+    isPremium: v.boolean(),
+  })
 });

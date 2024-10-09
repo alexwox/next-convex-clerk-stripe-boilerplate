@@ -66,16 +66,17 @@ export default function DisplayData() {
             {placeholders?.map((placeholder) => (
                 <div
                     key={placeholder._id}
-                    className="flex items-center p-2 hover:bg-gray-100 cursor-pointer"
+                    className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer transition-colors duration-200"
                     onClick={(e) => handleRowClick(placeholder._id, selectedIds.includes(placeholder._id), e)}
                 >
                     <input
                         type="checkbox"
                         checked={selectedIds.includes(placeholder._id)}
-                        className="mr-2"
+                        onChange={(e) => handleCheckboxChange(placeholder._id, e.target.checked, e)}
+                        className="mr-2 cursor-pointer"
                         onClick={(e) => e.stopPropagation()}
                     />
-                    <span>{placeholder.title}</span>
+                    <span className="dark:text-gray-200">{placeholder.title}</span>
                 </div>
             ))}
         </div>
