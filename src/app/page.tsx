@@ -1,6 +1,7 @@
 import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import GenerateDataForm from "./generate-data-form";
 import DisplayData from "./display-data";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
             <h1 className="text-3xl font-bold">Dashboard</h1>
             <div className="flex items-center space-x-4">
               <UserButton />
+              <ModeToggle />
               <SignOutButton>
                 <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
                   Sign Out

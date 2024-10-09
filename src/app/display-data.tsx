@@ -72,7 +72,6 @@ export default function DisplayData() {
                     <input
                         type="checkbox"
                         checked={selectedIds.includes(placeholder._id)}
-                        onChange={(e) => handleCheckboxChange(placeholder._id, e.target.checked, e)}
                         className="mr-2"
                         onClick={(e) => e.stopPropagation()}
                     />
