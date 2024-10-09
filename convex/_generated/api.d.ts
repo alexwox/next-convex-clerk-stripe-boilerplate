@@ -15,7 +15,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-import type * as make_data from "../make-data.js";
+import type * as placeholder_data from "../placeholder_data.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -26,7 +26,7 @@ import type * as make_data from "../make-data.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  "make-data": typeof make_data;
+  placeholder_data: typeof placeholder_data;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
