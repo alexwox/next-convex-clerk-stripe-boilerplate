@@ -16,7 +16,7 @@ export default function DisplayData() {
     const lastChecked = useRef<string | null>(null);
 
     const handleCheckboxChange = (id: string, isChecked: boolean, event: React.MouseEvent) => {
-        if (event.shiftKey && lastChecked.current) {
+        if ('shiftKey' in event && event.shiftKey && lastChecked.current) {
             const currentIndex = placeholders!.findIndex(p => p._id === id);
             const lastIndex = placeholders!.findIndex(p => p._id === lastChecked.current);
             const start = Math.min(currentIndex, lastIndex);
