@@ -4,7 +4,9 @@ import DisplayData from "./display-data";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import PayButton from "./pay-button";
 
+
 export default function Home() {
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <div className="w-full max-w-4xl p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md">

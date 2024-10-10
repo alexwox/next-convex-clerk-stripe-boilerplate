@@ -1,6 +1,7 @@
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 import { ConvexError } from "convex/values";
+import { isUserPremium } from "./users";
 
 export const makeData = mutation({
     args: {
@@ -11,11 +12,18 @@ export const makeData = mutation({
         if (!user) {
             throw new ConvexError("Unauthorized");
         }
+        const isPremium = await isUserPremium(ctx);
+
+        if (!isPremium) {
+            throw new ConvexError("You must be a premium user to make data");
+        }
 
         await ctx.db.insert("placeholder_data", {
             title: args.title,
             userId: user.subject,
         });
+
+
     }
 })
 

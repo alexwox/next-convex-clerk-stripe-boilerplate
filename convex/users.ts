@@ -1,7 +1,39 @@
-import { internalMutation } from "./_generated/server";
+import { internalMutation, query, QueryCtx, MutationCtx } from "./_generated/server";
 import { v } from "convex/values";
 import { Id } from "./_generated/dataModel";
 import { ConvexError } from "convex/values";
+
+export const getUser = query({
+    args: {},
+    handler: async (ctx, args) => {
+
+        const user = await ctx.auth.getUserIdentity();
+
+        if (!user) {
+            return undefined;
+        }
+
+        return ctx.db
+            .query("users")
+            .withIndex("by_userId", (q) => q.eq("userId", user.subject))
+            .first();
+    }
+})
+
+export const isUserPremium = async (ctx: QueryCtx | MutationCtx) => {
+    const user = await ctx.auth.getUserIdentity();
+
+    if (!user) {
+        return false;
+    }
+
+    const userToCheck = await ctx.db
+    .query("users")
+    .withIndex("by_userId", (q) => q.eq("userId", user.subject))
+    .first();
+
+    return userToCheck?.isPremium || false;
+}
 
 export const createUser = internalMutation({
     args: {
