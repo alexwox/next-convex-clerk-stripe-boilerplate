@@ -12,5 +12,13 @@ export default defineSchema({
     isPremium: v.boolean(),
     stripeId: v.optional(v.string()),
   })
-  .index("by_userId", ["userId"])
+  .index("by_userId", ["userId"]),
+  payments: defineTable({
+    userId: v.string(),
+    stripeId: v.string(),
+    amount: v.number(),
+    currency: v.string(),
+    status: v.string(),
+  })
+  .index("by_userId", ["userId"]),
 });

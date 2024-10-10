@@ -7,7 +7,43 @@ import { internal } from "./_generated/api";
 
 type Metadata = {
     userId: string;
+    stripeId: string;
+    amount: number;
+    currency: string;
 }
+
+export const pay = action({
+    // The action takes the message the user composed
+    args: { userId: v.string(), stripeId: v.string() },
+    handler: async (ctx, args) => {
+      // We need to tell Stripe where to redirect to
+      const user = await ctx.auth.getUserIdentity()
+      
+      if (!user) {
+        throw new Error("User not logged in to pay");
+      }
+      
+      const domain = process.env.HOSTING_URL ?? "http://localhost:3000";
+      const stripe = new Stripe(process.env.STRIPE_KEY!, {
+        apiVersion: "2024-09-30.acacia",
+      });
+      // Here we create a document in the "payments" table
+      // This is where the Stripe checkout is configured
+      const session = await stripe.checkout.sessions.create({
+        line_items: [{price: process.env.STRIPE_PRICE_ID!, quantity: 1}],
+        metadata: {
+            userId: user.subject,
+        },
+        mode: "payment",
+        // This is how our web page will know which message we paid for
+        success_url: `${domain}`,
+        cancel_url: `${domain}`,
+        automatic_tax: { enabled: true },
+      });
+  
+      return session.url;
+    },
+  });
 
 export const fulfill = internalAction({
     args: {
@@ -38,6 +74,10 @@ export const fulfill = internalAction({
                     stripeId: completedEvent.id,
                 })
                 await ctx.runMutation(internal.users.upgradeUser, {
+                    userId: userId,
+                })
+
+                await ctx.runMutation(internal.payments.fulfill, {
                     userId: userId,
                 })
             }

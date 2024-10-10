@@ -17,6 +17,7 @@ import type {
 } from "convex/server";
 import type * as clerk from "../clerk.js";
 import type * as http from "../http.js";
+import type * as payments from "../payments.js";
 import type * as placeholder_data from "../placeholder_data.js";
 import type * as stripe from "../stripe.js";
 import type * as users from "../users.js";
@@ -32,6 +33,7 @@ import type * as users from "../users.js";
 declare const fullApi: ApiFromModules<{
   clerk: typeof clerk;
   http: typeof http;
+  payments: typeof payments;
   placeholder_data: typeof placeholder_data;
   stripe: typeof stripe;
   users: typeof users;
