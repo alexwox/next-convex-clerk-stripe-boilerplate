@@ -7,8 +7,10 @@ export default defineSchema({
     userId: v.string(),
   }),
   users: defineTable({
-    id: v.string(),
+    userId: v.string(),
     email: v.string(),
     isPremium: v.boolean(),
+    stripeId: v.optional(v.string()),
   })
+  .index("by_userId", ["userId"])
 });

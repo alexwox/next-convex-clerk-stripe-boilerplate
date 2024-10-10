@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stripe:listen":  "stripe listen --forward-to https://ceaseless-wildebeest-699.convex.site/stripe",
+    "stripe:trigger": "stripe trigger payment_intent.succeeded"
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.48",
@@ -23,6 +25,7 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "stripe": "^17.2.0",
     "svix": "^1.37.0",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
