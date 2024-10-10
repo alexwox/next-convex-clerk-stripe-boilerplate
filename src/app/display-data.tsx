@@ -52,7 +52,7 @@ export default function DisplayData() {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-4">
             <div className="flex justify-end mb-4">
                 <Button
                     onClick={handleDelete}
@@ -72,7 +72,6 @@ export default function DisplayData() {
                     <input
                         type="checkbox"
                         checked={selectedIds.includes(placeholder._id)}
-                        onChange={(e) => handleCheckboxChange(placeholder._id, e.target.checked, e)}
                         className="mr-2 cursor-pointer"
                         onClick={(e) => e.stopPropagation()}
                     />

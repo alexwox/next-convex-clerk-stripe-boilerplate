@@ -25,7 +25,7 @@ export const getData = query({
     handler: async (ctx, args) => {
         const user = await ctx.auth.getUserIdentity();
         if (!user) {
-            throw new ConvexError("Unauthorized");
+            return [];
         }
 
         return await ctx.db.
