@@ -30,7 +30,7 @@ export const upgradeUser = internalMutation({
             throw new ConvexError("User not found");
         }
 
-        await ctx.db.patch(args.userId as Id<"users">, {
+        await ctx.db.patch(user._id, {
             isPremium: true,
         })
     }

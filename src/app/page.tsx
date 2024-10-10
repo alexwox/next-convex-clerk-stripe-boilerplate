@@ -2,6 +2,7 @@ import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton } from "@c
 import GenerateDataForm from "./generate-data-form";
 import DisplayData from "./display-data";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import PayButton from "./pay-button";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
             <div className="flex items-center space-x-4">
               <UserButton />
               <ModeToggle />
+              <PayButton />
               <SignOutButton>
                 <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
                   Sign Out
