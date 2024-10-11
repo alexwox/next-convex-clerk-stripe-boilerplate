@@ -22,8 +22,6 @@ export const makeData = mutation({
             title: args.title,
             userId: user.subject,
         });
-
-
     }
 })
 
