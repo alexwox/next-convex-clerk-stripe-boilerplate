@@ -17,7 +17,6 @@ export default function GenerateDataForm() {
     const createData = useMutation(api.placeholder_data.makeData);
     const user = useQuery(api.users.getUser);
     const [showModal, setShowModal] = useState(false);
-    const [pendingTitle, setPendingTitle] = useState("");
 
     const isPremium = user && user.isPremium;
 
@@ -31,7 +30,6 @@ export default function GenerateDataForm() {
             await createData({ title });
             form.reset();
         } else {
-            setPendingTitle(title);
             setShowModal(true);
         }
     };
