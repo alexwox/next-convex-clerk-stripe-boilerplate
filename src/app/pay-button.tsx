@@ -8,7 +8,7 @@ export default function PayButton() {
     const pay = useAction(api.stripe.pay);
     const router = useRouter();
     const user = useQuery(api.users.getUser);
-
+    console.log(user);
     const isPremium = user && user.isPremium;
 
     async function handleUpgradeClick() {
@@ -42,5 +42,5 @@ export default function PayButton() {
             </div>
         );
     }
-    return null;
+    return <div className="text-red-500">No user</div>;
 }
