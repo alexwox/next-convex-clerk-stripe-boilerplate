@@ -31,7 +31,6 @@ export default function GenerateDataForm() {
             await createData({ title });
             form.reset();
         } else {
-            setPendingTitle(title);
             setShowModal(true);
         }
     };

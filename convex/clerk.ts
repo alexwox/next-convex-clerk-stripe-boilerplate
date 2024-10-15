@@ -2,7 +2,6 @@
 
 import { internalAction } from "./_generated/server";
 import type { WebhookEvent } from "@clerk/backend";
-import { internal } from "./_generated/api";
 import { Webhook } from "svix";
 import { v } from "convex/values";
 

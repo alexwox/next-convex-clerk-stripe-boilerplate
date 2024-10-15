@@ -7,9 +7,9 @@ Understand how to integrate these services into a project.
 TODO: 
 
 - [X] Set up NextJS
-- [ ] Set up TailwindCSS and Shadcn
+- [X] Set up TailwindCSS and Shadcn
 - [X] Set up Convex
-- [ ] Set up Clerk 
-- [ ] Set up Stripe
+- [X] Set up Clerk 
+- [X] Set up Stripe
 - [ ] Deploy to Vercel
 
