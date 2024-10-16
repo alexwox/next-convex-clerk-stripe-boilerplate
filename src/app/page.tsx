@@ -16,7 +16,7 @@ export default function Home() {
             <p className="mb-4 dark:text-gray-300">Please sign in to access the features.</p>
             <SignInButton mode="modal">
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                Sign In
+                Sign In or Sign up
               </button>
             </SignInButton>
           </div>
