@@ -42,5 +42,5 @@ export default function PayButton() {
             </div>
         );
     }
-    return <div className="text-red-500">No user</div>;
+    return <div className="text-center border border-grey-500 rounded-md p-2">Loading...</div>;
 }
