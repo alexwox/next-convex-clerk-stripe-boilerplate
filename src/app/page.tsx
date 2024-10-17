@@ -1,8 +1,5 @@
-import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import GenerateDataForm from "./generate-data-form";
-import DisplayData from "./display-data";
-import { ModeToggle } from "@/components/ui/mode-toggle";
-import PayButton from "./pay-button";
+import { SignInButton, SignedIn, SignedOut} from "@clerk/nextjs";
+import SignedInContent from "./signed-in-content";
 
 
 export default function Home() {
@@ -22,32 +19,8 @@ export default function Home() {
           </div>
         </SignedOut>
         
-        <SignedIn >
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold dark:text-white">Dashboard</h1>
-            <div className="flex items-center space-x-4">
-              <UserButton />
-              <ModeToggle />
-              <PayButton />
-              <SignOutButton>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
-                  Sign Out
-                </button>
-              </SignOutButton>
-            </div>
-          </div>
-          
-          <div className="space-y-8">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 dark:text-white">Generate Data</h2>
-              <GenerateDataForm />
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 dark:text-white">Display Data</h2>
-              <DisplayData />
-            </section>
-          </div>
+        <SignedIn>
+          <SignedInContent />
         </SignedIn>
       </div>
     </main>
