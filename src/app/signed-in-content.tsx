@@ -50,7 +50,7 @@ export default function SignedInContent() {
                         <PayButton />
                     </div>
                     <SignOutButton>
-                        <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-full">
+                        <button className="bg-red-500 hover:bg-red-600 text-white font-bold p-2 rounded-md w-full">
                             Sign Out
                         </button>
                     </SignOutButton>

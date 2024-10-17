@@ -38,13 +38,13 @@ export default function GenerateDataForm() {
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="flex items-center gap-5">
-                    <label htmlFor="title">Enter a title: </label>
+                    <label htmlFor="title">Enter some text: </label>
                     <input 
                         type="text" 
                         name="title" 
                         className="border border-gray-300 rounded-md p-2 flex-grow" 
                     />
-                    <Button type="submit">Generate</Button>
+                    <Button type="submit">Submit</Button>
                 </div>
             </form>
 
@@ -53,7 +53,7 @@ export default function GenerateDataForm() {
                     <DialogHeader>
                         <DialogTitle>Premium Feature</DialogTitle>
                         <DialogDescription>
-                            Generating data is a premium feature. Upgrade your account to access this functionality.
+                            Submitting data is a premium feature. Upgrade your account to access this functionality.
                         </DialogDescription>
                     </DialogHeader>
                     <DialogFooter>
