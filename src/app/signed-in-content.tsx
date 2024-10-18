@@ -41,7 +41,7 @@ export default function SignedInContent() {
             {/* Mobile menu */}
 
             {isMenuOpen && (
-                <div className="md:hidden flex flex-col space-y-4 mb-6">
+                <div className="md:hidden flex flex-col space-y-4 mb-6 border border-grey-500 rounded-md p-2">
                     <div className="flex justify-between items-center">
                         <UserButton />
                         <ModeToggle />
