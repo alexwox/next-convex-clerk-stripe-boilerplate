@@ -11,5 +11,5 @@ TODO:
 - [X] Set up Convex
 - [X] Set up Clerk 
 - [X] Set up Stripe
-- [ ] Deploy to Vercel
+- [X] Deploy to Vercel
 
